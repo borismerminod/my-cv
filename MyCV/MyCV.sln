@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCV.Server", "MyCV.Server\MyCV.Server.csproj", "{BB9BA8B1-87CE-49B6-A220-3A82F4D3A01D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyCV.Server", "MyCV.Server\MyCV.Server.csproj", "{BB9BA8B1-87CE-49B6-A220-3A82F4D3A01D}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "mycv.client", "mycv.client\mycv.client.esproj", "{0E79F1BB-F2F2-47BB-8626-B55CD8D283B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCV.Tests", "MyCV.Tests\MyCV.Tests.csproj", "{891BF0D5-3581-4BA8-AD55-A3BE89288165}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyCV.Tests", "MyCV.Tests\MyCV.Tests.csproj", "{891BF0D5-3581-4BA8-AD55-A3BE89288165}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
