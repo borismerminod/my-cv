@@ -10,7 +10,7 @@ using MyCV.Server.Data;
 
 namespace MyCV.Server.Migrations
 {
-    [DbContext(typeof(UserDbContext))]
+    [DbContext(typeof(UserDbContextOBS))]
     [Migration("20250427151056_InitialCreate")]
     partial class InitialCreate
     {

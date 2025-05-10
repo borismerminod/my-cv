@@ -12,18 +12,18 @@ namespace MyCV.Tests
 {
     internal class UserTest
     {
-        private UserDbContext _context;
+        private UserDbContextOBS _context;
 
         [SetUp]
         public void SetUp()
         {
             //var options = new DbContextOptionsBuilder<UserDbContext>().UseInMemoryDatabase(databaseName: "MyCVTest").Options;
 
-            var options = new DbContextOptionsBuilder<UserDbContext>()
+            var options = new DbContextOptionsBuilder<UserDbContextOBS>()
             .UseSqlServer("Server=DESKTOP-30BP46K\\DB_SERVER_WEB;Database=MYCV_DB;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True;")
             .Options;
 
-            _context = new UserDbContext(options);
+            _context = new UserDbContextOBS(options);
             /*_context.User.Add(new User {Username="test", Mail = "test@example.com", Password="testpass", ConfirmedPassword="testpass" });
             _context.SaveChanges();*/
         }

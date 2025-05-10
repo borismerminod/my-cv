@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using MyCV.Server.Models;
+using MyCV.Server.Areas.Identity.Data;
+using Microsoft.AspNetCore.Identity;
 using MyCV.Server.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +17,15 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<UserDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MyCVContext") ?? throw new InvalidOperationException("Connection string 'MyCVContext' not found.")));
+
+//builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<UserDbContext>();
+
+builder.Services.AddDefaultIdentity<User>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = true;
+    options.User.RequireUniqueEmail = true;
+})
+.AddEntityFrameworkStores<UserDbContext>();
 
 //</Original>
 var app = builder.Build();
@@ -31,6 +42,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
     //</original>
 }
+
 
 //<original>
 app.UseDefaultFiles();
@@ -49,3 +61,5 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+public partial class Program { }

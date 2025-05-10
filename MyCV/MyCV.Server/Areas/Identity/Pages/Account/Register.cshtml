@@ -1,0 +1,40 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1 id="registration-title">Create a new account.</h1>
+
+
+<form class="registration-form" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+    <div asp-validation-summary="ModelOnly" class="field-validation-error" role="alert"></div>
+    <div class="form-group">
+        <label asp-for="Input.Username" class="form-group-label">Username</label>
+        <input asp-for="Input.Username" class="form-group-input" autocomplete="username" aria-required="true" placeholder="username" />
+        <span asp-validation-for="Input.Username" class="field-validation-error"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Input.Email" class="form-group-label">Email</label>
+        <input asp-for="Input.Email" class="form-group-input" autocomplete="email" aria-required="true" placeholder="name@example.com" />
+        <span asp-validation-for="Input.Email" class="field-validation-error"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Input.Password" class="form-group-label">Password</label>
+        <input asp-for="Input.Password" class="form-group-input" autocomplete="new-password" aria-required="true" placeholder="password" />
+        <span asp-validation-for="Input.Password" class="field-validation-error"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Input.ConfirmPassword" class="form-group-label">Confirm Password</label>
+        <input asp-for="Input.ConfirmPassword" class="form-group-input" autocomplete="new-password" aria-required="true" placeholder="password" />
+        <span asp-validation-for="Input.ConfirmPassword" class="field-validation-error"></span>
+    </div>
+    <div class="form-group">
+        <button id="registation-submit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+    </div>
+</form>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

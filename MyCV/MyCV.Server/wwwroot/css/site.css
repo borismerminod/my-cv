@@ -80,7 +80,7 @@ body {
 }
 
 /* Formulaire d'inscription */
-.registration-form {
+.registration-form, .login-form {
     background: #ffffff;
     padding: 30px;
     border-radius: 12px;
@@ -90,7 +90,7 @@ body {
 }
 
 /* Titre */
-#registration-title {
+#registration-title, #login-title {
     text-align: center;
     margin-bottom: 25px;
     color: #333;
@@ -128,7 +128,7 @@ body {
 }
 
 /* Bouton submit */
-#registation-submit {
+#registation-submit, #login-submit {
     width: 100%;
     background-color: #007bff;
     color: white;
@@ -143,6 +143,34 @@ body {
 #registation-submit:hover {
     background-color: #0056b3;
 }
+
+/* Checkbox + label intégré */
+#login-remember-me {
+    margin-right: 6px;
+}
+
+.form-group label[for="Input_RememberMe"] {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 0.95rem;
+}
+
+/* Liens sous le formulaire */
+.form-links {
+    margin: 6px 0;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+    .form-links a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+        .form-links a:hover {
+            text-decoration: underline;
+        }
 
 /* Footer optimisé */
 .footer {
