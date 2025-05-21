@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Nouveau profil",
+    "Projects": [
+      {
+        "Path": "MyCV.Server\\MyCV.Server.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "mycv.client\\mycv.client.esproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

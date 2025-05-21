@@ -3,8 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 namespace MyCV.Server.Controllers
 {
     [ApiController]
-    //[Route("[controller]")]
-    [Route("home")]
+    [Route("[controller]")]
+    //[Route("disabled")]
+    //[Route("home")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]

@@ -7,6 +7,9 @@ using MyCV.Server.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
+builder.Services.AddAuthentication();
+builder.Services.AddAuthorization();
+
 // Add services to the container.
 //<Original>
 builder.Services.AddControllers();
@@ -48,14 +51,26 @@ if (app.Environment.IsDevelopment())
 app.UseDefaultFiles();
 app.UseStaticFiles();
 app.UseHttpsRedirection();
-app.UseAuthorization();
 //app.MapControllers();
-app.MapFallbackToFile("/index.html");
+
+//A dcéommenter pour utiliser Angular
+//app.MapFallbackToFile("/index.html");
 
 //</original>
 app.UseRouting();
-app.MapRazorPages();
 
+//Les deux lignes ci-dessous doivent être après app.UseRouting(); et avant app.UseEndpoints();
+app.UseAuthentication(); // Authentification
+app.UseAuthorization();
+
+// Rediriger la route racine (/) vers la page de login
+app.MapGet("/", context =>
+{
+    context.Response.Redirect("/Identity/Account/Login");
+    return Task.CompletedTask;
+});
+
+app.MapRazorPages();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
